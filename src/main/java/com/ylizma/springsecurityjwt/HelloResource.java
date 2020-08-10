@@ -23,10 +23,11 @@ public class HelloResource {
     @Autowired
     JwtUtil jwtUtil;
 
-    @GetMapping("/hello")
+    @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(){
         return "Hello world";
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
